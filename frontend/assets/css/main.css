@@ -765,6 +765,19 @@ a.back-to-top:focus {
   margin-bottom: 25px;
 }
 
+.contents a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+  transition: color 0.3s;
+  font-size: 20px;
+  font-family: "Candara Light", cursive;
+}
+
+.contents a:hover {
+  color: #1260a2;
+}
+
 #hero-area .contents .btn {
   margin: 25px 0px;
   text-transform: uppercase;
