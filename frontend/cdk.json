@@ -1,0 +1,5 @@
+{
+  "app": "npx ts-node --prefer-ts-exts bin/resume.ts",
+  "account": "{YOUR_ACCOUNT_ID}",
+  "region": "eu-central-1"
+}

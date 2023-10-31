@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const cdk = require("@aws-cdk/core");
+const resume_stack_1 = require("../stacks/resume-stack");
+const app = new cdk.App();
+const staticSite = new resume_stack_1.ResumeFrontendStack(app, "personal-resume-website-stack", {
+    env: {
+        account: app.node.tryGetContext("account"),
+        region: app.node.tryGetContext("region"),
+    },
+    //  domainName: "dennisokeeffe.com",
+    // siteSubDomain: "nextjs-10-static-example",
+});
+// example of adding a tag - please refer to AWS best practices for ideal usage
+cdk.Tags.of(staticSite).add("Project", "My own personal resume website");
+app.synth();
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicmVzdW1lLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsicmVzdW1lLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUNBLHFDQUFzQztBQUN0Qyx5REFBNkQ7QUFFN0QsTUFBTSxHQUFHLEdBQUcsSUFBSSxHQUFHLENBQUMsR0FBRyxFQUFFLENBQUM7QUFDMUIsTUFBTSxVQUFVLEdBQUcsSUFBSSxrQ0FBbUIsQ0FDeEMsR0FBRyxFQUNILCtCQUErQixFQUMvQjtJQUNFLEdBQUcsRUFBRTtRQUNILE9BQU8sRUFBRSxHQUFHLENBQUMsSUFBSSxDQUFDLGFBQWEsQ0FBQyxTQUFTLENBQUM7UUFDMUMsTUFBTSxFQUFFLEdBQUcsQ0FBQyxJQUFJLENBQUMsYUFBYSxDQUFDLFFBQVEsQ0FBQztLQUN6QztJQUNELG9DQUFvQztJQUNwQyw2Q0FBNkM7Q0FDOUMsQ0FDRixDQUFDO0FBRUYsK0VBQStFO0FBQy9FLEdBQUcsQ0FBQyxJQUFJLENBQUMsRUFBRSxDQUFDLFVBQVUsQ0FBQyxDQUFDLEdBQUcsQ0FBQyxTQUFTLEVBQUUsZ0NBQWdDLENBQUMsQ0FBQztBQUV6RSxHQUFHLENBQUMsS0FBSyxFQUFFLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIjIS91c3IvYmluL2VudiBub2RlXHJcbmltcG9ydCBjZGsgPSByZXF1aXJlKFwiQGF3cy1jZGsvY29yZVwiKTtcclxuaW1wb3J0IHsgUmVzdW1lRnJvbnRlbmRTdGFjayB9IGZyb20gXCIuLi9zdGFja3MvcmVzdW1lLXN0YWNrXCI7XHJcblxyXG5jb25zdCBhcHAgPSBuZXcgY2RrLkFwcCgpO1xyXG5jb25zdCBzdGF0aWNTaXRlID0gbmV3IFJlc3VtZUZyb250ZW5kU3RhY2soXHJcbiAgYXBwLFxyXG4gIFwicGVyc29uYWwtcmVzdW1lLXdlYnNpdGUtc3RhY2tcIixcclxuICB7XHJcbiAgICBlbnY6IHtcclxuICAgICAgYWNjb3VudDogYXBwLm5vZGUudHJ5R2V0Q29udGV4dChcImFjY291bnRcIiksXHJcbiAgICAgIHJlZ2lvbjogYXBwLm5vZGUudHJ5R2V0Q29udGV4dChcInJlZ2lvblwiKSxcclxuICAgIH0sXHJcbiAgICAvLyAgZG9tYWluTmFtZTogXCJkZW5uaXNva2VlZmZlLmNvbVwiLFxyXG4gICAgLy8gc2l0ZVN1YkRvbWFpbjogXCJuZXh0anMtMTAtc3RhdGljLWV4YW1wbGVcIixcclxuICB9XHJcbik7XHJcblxyXG4vLyBleGFtcGxlIG9mIGFkZGluZyBhIHRhZyAtIHBsZWFzZSByZWZlciB0byBBV1MgYmVzdCBwcmFjdGljZXMgZm9yIGlkZWFsIHVzYWdlXHJcbmNkay5UYWdzLm9mKHN0YXRpY1NpdGUpLmFkZChcIlByb2plY3RcIiwgXCJNeSBvd24gcGVyc29uYWwgcmVzdW1lIHdlYnNpdGVcIik7XHJcblxyXG5hcHAuc3ludGgoKTtcclxuIl19
