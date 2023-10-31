@@ -11,8 +11,6 @@ const staticSite = new ResumeFrontendStack(
       account: app.node.tryGetContext("account"),
       region: app.node.tryGetContext("region"),
     },
-    //  domainName: "dennisokeeffe.com",
-    // siteSubDomain: "nextjs-10-static-example",
   }
 );
 
