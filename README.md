@@ -1,2 +1,2 @@
 ﻿# personal-portfolio
-<WORK IN PROGRESS>
+WORK IN PROGRESS
