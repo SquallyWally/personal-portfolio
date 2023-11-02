@@ -15,6 +15,8 @@
       "inlineSourceMap": true,
       "inlineSources": true,
       "experimentalDecorators": true,
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
       "strictPropertyInitialization": false,
       // only required if using Node fns (which I do later on)
       "types": ["node"]

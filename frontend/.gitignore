@@ -1,4 +1,5 @@
 !jest.config.js
+secrets.json
 *.d.ts
 node_modules
 

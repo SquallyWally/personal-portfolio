@@ -1,0 +1,17 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-cdk/aws-apigateway": "^1.204.0",
+    "@aws-cdk/aws-dynamodb": "^1.204.0",
+    "@aws-cdk/aws-lambda": "^1.204.0"
+  }
+}

@@ -1,11 +1,13 @@
 import { Duration, StackProps } from "@aws-cdk/core";
 import cloudfront = require("@aws-cdk/aws-cloudfront");
 import cloudfront_origins = require("@aws-cdk/aws-cloudfront-origins");
+import acm = require("@aws-cdk/aws-certificatemanager");
 import s3 = require("@aws-cdk/aws-s3");
 import s3deploy = require("@aws-cdk/aws-s3-deployment");
 import iam = require("@aws-cdk/aws-iam");
 import cdk = require("@aws-cdk/core");
 import path = require("path");
+import secrets from "../secrets.json";
 
 export interface StaticSiteProps extends StackProps {
   domainName?: string;
@@ -17,9 +19,10 @@ export class ResumeFrontendStack extends cdk.Stack {
     super(scope, name, props);
 
     // Bucket
-    const resumeBucket = new s3.Bucket(this, "personal-portfolio-milo_new", {
-      publicReadAccess: false,
+    const resumeBucket = new s3.Bucket(this, "personal-portfolio-milo", {
+      publicReadAccess: true,
     });
+
     new cdk.CfnOutput(this, "Bucket", { value: resumeBucket.bucketName });
 
     const originAccessIdentity = new cloudfront.OriginAccessIdentity(
@@ -30,12 +33,20 @@ export class ResumeFrontendStack extends cdk.Stack {
       }
     );
 
+    const certificate = acm.Certificate.fromCertificateArn(
+      this,
+      "Certificate",
+      secrets.certificateArn
+    );
+
     const distribution = new cloudfront.Distribution(this, "distribution", {
       defaultBehavior: {
         origin: new cloudfront_origins.S3Origin(resumeBucket),
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
       },
       defaultRootObject: "index.html",
+      domainNames: ["milokastablank.com", "www.milokastablank.com"],
+      certificate: certificate,
       errorResponses: [
         {
           httpStatus: 404,
@@ -74,7 +85,7 @@ export class ResumeFrontendStack extends cdk.Stack {
       sources: [s3deploy.Source.asset(path.join(__dirname, "../dist"))],
       destinationBucket: resumeBucket,
       distribution,
-      distributionPaths: ["/*"],
+      distributionPaths: ["/*", "/assets/css/*"],
     });
   }
 }
