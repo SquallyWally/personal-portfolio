@@ -18,7 +18,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3be74f45d9ba2a08d267dc5c002ceb2f81b212f9d6bf1c5abba462a0434b3bf6.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/134ff76cf6f412f31cc884fc6a350087f1b9d25b9016b3cc15ed839dd525df37.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -87,7 +87,7 @@
         "/ResumeBackEndStack/resume_api/Deployment/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "resumeapiDeploymentE8D38E2Fb9e12419d2e8e487986d9b982b546b18"
+            "data": "resumeapiDeploymentE8D38E2F15c6c3ba2b66208d1ba2d401e37e9532"
           }
         ],
         "/ResumeBackEndStack/resume_api/DeploymentStage.prod/Resource": [

@@ -40,7 +40,7 @@ export class ResumeBackEndStack extends Stack {
       defaultCorsPreflightOptions: {
         allowHeaders: ["Content-Type"],
         allowMethods: ["OPTIONS", "POST"],
-        allowOrigins: ["https://milokastablank.com"],
+        allowOrigins: ["https://www.milokastablank.com"],
       },
     });
 

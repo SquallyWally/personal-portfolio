@@ -128,7 +128,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "6673956a66f8cb9809f1d4fe2b6e711cb897f7f78080216c20fa01a95298fd32.zip"
+     "S3Key": "32385ea1961a407242082f803aadd896aebabdc2ad4cdc5f83ec881cf2a2f316.zip"
     },
     "Environment": {
      "Variables": {
@@ -156,7 +156,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "ResumeBackEndStack/visitorCount/LambdaFunction/Resource",
-    "aws:asset:path": "asset.6673956a66f8cb9809f1d4fe2b6e711cb897f7f78080216c20fa01a95298fd32",
+    "aws:asset:path": "asset.32385ea1961a407242082f803aadd896aebabdc2ad4cdc5f83ec881cf2a2f316",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Code",
     "cfn_nag": {
@@ -271,7 +271,7 @@
     "aws:cdk:path": "ResumeBackEndStack/resume_api/Account"
    }
   },
-  "resumeapiDeploymentE8D38E2Fb9e12419d2e8e487986d9b982b546b18": {
+  "resumeapiDeploymentE8D38E2F15c6c3ba2b66208d1ba2d401e37e9532": {
    "Type": "AWS::ApiGateway::Deployment",
    "Properties": {
     "Description": "Automatically created by the RestApi construct",
@@ -291,7 +291,7 @@
    "Type": "AWS::ApiGateway::Stage",
    "Properties": {
     "DeploymentId": {
-     "Ref": "resumeapiDeploymentE8D38E2Fb9e12419d2e8e487986d9b982b546b18"
+     "Ref": "resumeapiDeploymentE8D38E2F15c6c3ba2b66208d1ba2d401e37e9532"
     },
     "RestApiId": {
      "Ref": "resumeapiB6A8F4D2"
@@ -316,7 +316,7 @@
       {
        "ResponseParameters": {
         "method.response.header.Access-Control-Allow-Headers": "'Content-Type'",
-        "method.response.header.Access-Control-Allow-Origin": "'https://milokastablank.com'",
+        "method.response.header.Access-Control-Allow-Origin": "'https://www.milokastablank.com'",
         "method.response.header.Vary": "'Origin'",
         "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'"
        },

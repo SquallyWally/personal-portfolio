@@ -1,12 +1,18 @@
-function updateVisitorCount() {
-    
-  let visitorCount = parseInt(localStorage.getItem("visitorCount")) || 0;
+async function updateVisitorCount() {
+  try {
+    const response = await fetch(secrets.apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
-  visitorCount++;
+    const data = await response.json();
 
-  document.getElementById("visitor").innerHTML = visitorCount;
-
-  localStorage.setItem("visitorCount", visitorCount);
+    document.getElementById("visitor").innerHTML = data.Attributes.visitors;
+  } catch (error) {
+    console.error(`An error occurred: ${error}`);
+  }
 }
 
 updateVisitorCount();

@@ -21,7 +21,7 @@ exports.handler = async () => {
 
     const headers = {
       "Access-Control-Allow-Headers": "Content-Type",
-      "Access-Control-Allow-Origin": "https://milokastablank.com",
+      "Access-Control-Allow-Origin": "https://www.milokastablank.com",
       "Access-Control-Allow-Methods": "OPTIONS, POST, GET",
     };
 
@@ -31,11 +31,12 @@ exports.handler = async () => {
       body: JSON.stringify(data),
     };
   } catch (error) {
+    console.log(`Unable to update Item ${error}`);
     return {
       statusCode: 403,
       headers: {
         "Access-Control-Allow-Headers": "Content-Type",
-        "Access-Control-Allow-Origin": "https://milokastablank.com",
+        "Access-Control-Allow-Origin": "https://www.milokastablank.com",
         "Access-Control-Allow-Methods": "OPTIONS, POST, GET",
       },
       body: `Unable to update Item ${error}`,

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import cdk = require("@aws-cdk/core");
-import { ResumeFrontendStack } from "../stacks/resume-stack";
+import { ResumeFrontendStack } from "../stacks/resume-frontend-stack";
 
 const app = new cdk.App();
 const staticSite = new ResumeFrontendStack(app, "portfolio-stack", {
